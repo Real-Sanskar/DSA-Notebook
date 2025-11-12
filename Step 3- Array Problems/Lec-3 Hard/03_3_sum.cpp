@@ -42,7 +42,7 @@ using namespace std;
 
 // 2. Better approach (Hash set) (TC : O(N*N)     SC : O(N*N))
 
-// LOGIC : fix 2 elementsl, find third using hash set
+// LOGIC : fix 2 elements, find third using hash set
 // ALGORITHM : 
 // fix i, then fix j
 // find -(arr[i] + arr[j]) in Hash set
@@ -78,7 +78,7 @@ using namespace std;
 // if sum == 0 , store triplet, skip duplicates, move both pointers
 // if sum < 0, move left
 // if sum > 0 , move right 
-// skip duplicate i values
+// skip duplicate i values  
 
 vector<vector<int>> three_sum(vector<int> &arr){
     int n = arr.size();
