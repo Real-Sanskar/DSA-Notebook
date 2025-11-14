@@ -1,3 +1,7 @@
+// find all unique quadruplets (a,b,c,d) in an array such that 
+//   (a+b+c+d) = target
+// RETURN quadraplets without duplicates
+
 #include<iostream>
 #include<vector>
 #include<set>
