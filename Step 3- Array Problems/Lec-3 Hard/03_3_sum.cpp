@@ -69,7 +69,7 @@ using namespace std;
 
 
 
-// 3. Optmial approach (sorting + 2 pointer)
+// 3. Optmial approach (sorting + 2 pointer) (TC : O(N*N)    SC : O(1))
 
 // LOGIC : sort array, fix 1 element and use two pointers to find pairs
 // ALGORITHM : 
