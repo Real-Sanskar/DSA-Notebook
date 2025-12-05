@@ -1,9 +1,13 @@
+// Given an array of size n, count pairs (i,j), where i<j and (arr[i] > 2 * arr[j])
+
 #include<iostream>
 #include<vector>
 using namespace std;
 
 
 
+// 1. Brute force approach (TC : O(N*N)   SC : O(1))
+// LOGIC : check all pairs(i,j) with nested loops
 
 // int reverse_pair(vector<int> &arr){
 //     int n = arr.size();
@@ -22,6 +26,13 @@ using namespace std;
 
 
 
+
+// 2. Optimal approach (TC : O(N*logN)    SC : O(N))
+// LOGIC : 
+// use divide and conquer
+// Recursively count pairs in left and right
+// count cross pairs (left element > 2 * right element)
+// merge sorted half   
 
 int merge(vector<int> &arr, int low, int mid, int high){
     int left = low;
