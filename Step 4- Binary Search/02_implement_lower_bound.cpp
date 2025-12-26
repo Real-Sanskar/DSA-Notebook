@@ -1,3 +1,4 @@
+//Given an array and a target, find smallest index where [element >=  target]
 #include<iostream>
 #include<vector>
 using namespace std;
