@@ -81,6 +81,9 @@ int last_occurrence(vector<int> &arr, int target){
 
 int count_occurrence(vector<int> &arr, int target){
     int firstIdx = first_occurrence(arr,target);
+
+    if(firstIdx == -1) return 0;
+
     int lastIdx = last_occurrence(arr,target);
     
     return (lastIdx - firstIdx + 1);
