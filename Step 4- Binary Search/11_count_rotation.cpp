@@ -1,20 +1,29 @@
+// Given a rotated sorted array, find number of rotations of array
+
 #include<iostream>
 #include<vector>
 #include<climits>
 using namespace std;
+
+
+// Same as "Find minimum in rotated sorted array"
+// Return index insted of value
 
 int count_rotation(vector<int> &arr){
     int n = arr.size();
     int low = 0, high = n-1;
     
     
-    int minIdx = 0;
+    int minIdx = 0, ans = INT_MAX;
 
     while(low <= high){
         int mid = low + (high-low)/2;
 
         if(arr[low] < arr[high]){
-            minIdx = low;
+            if(arr[low] < ans){
+                ans = arr[low];
+                minIdx = low;
+            }
             break;
         }
 
