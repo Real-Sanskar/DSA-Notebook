@@ -6,6 +6,15 @@
 #include<math.h>
 using namespace std;
 
+
+// Linear search (TC : O(M))
+// Logic: Try all numbers from 1 to M, check if i^N = M
+// Algorithm:
+// For i from 1 to M:
+// If i^N == M: return i
+// If i^N > M: break (no point checking further)
+// Return -1
+
 // int nthRoot(int n, int m){
 //     for(int i=1; i<=m; i++){
 //         long long power = pow(i,n);
@@ -22,6 +31,13 @@ using namespace std;
 // }
 
 
+
+
+
+// Binary Search : TC : O(logM)
+// Logic: Binary search on answer space (1 to M)
+
+// Helper Function: Calculate mid^N with overflow handling
 
 
 long long power(int mid, int n, int m){
