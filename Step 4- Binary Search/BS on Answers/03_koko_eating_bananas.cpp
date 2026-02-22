@@ -11,7 +11,15 @@ using namespace std;
 
 
 
-// Linear Search
+// Linear Search  (TC : O(max(arr) * n))
+
+// Logic: Try all speeds from 1 to max(piles), find minimum valid speed
+// Algorithm:
+
+// For K from 1 to max(piles):
+
+// Calculate total hours needed with speed K
+// If hours ≤ H: return K
 
 long long calculateTotalHours(vector<int> &arr, int speed){
     long long totalHours = 0;
@@ -35,6 +43,18 @@ long long calculateTotalHours(vector<int> &arr, int speed){
 
 
 
+
+
+
+// Binary Search   (TC : O(log(max(arr)) * N))
+
+// Logic: Binary search on answer space (speed K)
+// Key Observation:
+
+// Minimum speed: 1
+// Maximum speed: max(piles) (eating entire pile in 1 hour)
+// If K works, larger K also works (monotonic)
+// Find minimum K that works
 
 
 int minEatingSpeed(vector<int> &arr, int h){
