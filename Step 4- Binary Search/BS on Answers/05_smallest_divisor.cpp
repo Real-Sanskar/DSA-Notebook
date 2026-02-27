@@ -1,3 +1,6 @@
+// Given an array and an integer limit, find smallest positive integer divisor, such that on dividing all array
+// elements, the sum of elements is less than threshold or limit
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
