@@ -35,7 +35,7 @@ long long calculateDays(vector<int> &arr, int i){
 
 // int weightCapacity(vector<int> &arr, int d){
 //     int minVal = *max_element(arr.begin(),arr.end());
-//     int maxVal = 0;
+//     int maxVal = accumulate(arr.begin(),arr.end(),0);
 //     for(int val: arr){
 //         maxVal += val;
 //     }
