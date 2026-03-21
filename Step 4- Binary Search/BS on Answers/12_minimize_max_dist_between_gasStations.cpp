@@ -77,7 +77,7 @@ using namespace std;
 
 
 
-// 3. Optimal approach (BS on answer)  
+// 3. Optimal approach (BS on answer)  (TC :  O(N*log(maxLen)) + O(N),   SC : O(1))
 
 // Key Observation:
 
