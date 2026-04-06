@@ -1,3 +1,6 @@
+// Given 2 sorted arrays a and b of size m and n respectively and an integer k
+// Find kth element in final sorted array
+
 #include<bits/stdc++.h>
 using namespace std;
 
