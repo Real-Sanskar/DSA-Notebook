@@ -1,8 +1,18 @@
+// Search target in 2D matrix where:
+// 1. Each row is sorted
+// 2. First element of row > last element of previous row
+// 3. Entire matrix acts as 1 sorted array
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
 
 // 1. Brute force (TC : O(M*N)   SC : O(1))
+
+// Traverse entire matrix:
+// If target found: return true, else return false;
+
 
 // bool searchElement(vector<vector<int>> &mat, int key){
 //     int n = mat.size();
@@ -25,6 +35,9 @@ using namespace std;
 
 
 // 2. Better approach (Binary search)   (TC : O(N) + O(logM)   SC: O(1))
+
+// Find row where target may exists (Linear search for each row)
+// Binary Search in that row to find position
 
 // bool binarySearch(vector<int> &mat, int key){
 //     int m = mat.size();
@@ -60,6 +73,16 @@ using namespace std;
 
 
 
+
+
+// 3. Optimal Solution (TC : O(log(M*N))   SC: O(1))
+
+//Logic: Treat entire matrix as single sorted array, binary search on it
+
+
+// Key Insight:
+// Matrix is sorted like: [1,3,5,7,10,11,16,20,23,30,34,60]
+// Map 1D index to 2D: row = idx / m, col = idx % m
 
 bool searchElement(vector<vector<int>> &mat, int key){
     int n = mat.size();
