@@ -1,3 +1,7 @@
+// Search target in a 2D matrix where:
+// Each row is sorted
+// first element of each row NOT NECESSARILY greater than last element of previous row
+
 #include<bits/stdc++.h>
 using namespace std;
 
