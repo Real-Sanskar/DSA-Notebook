@@ -1,6 +1,6 @@
 // Search target in a 2D matrix where:
 // Each row is sorted
-// first element of each row NOT NECESSARILY greater than last element of previous row
+// first element of each row NOT NECESSARILY greater than last element of previous rowst
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -54,8 +54,8 @@ using namespace std;
 //     int m = mat[0].size();
 
 //     for(int i=0; i<n; i++){
-//         if(mat[i][0] <= key && key <= mat[i][m-1]){
-//             return binarySearch(mat[i],key);
+//         if(binarySearch(mat,key)){
+//             return true;
 //         }
 //     }
 //     return false;
