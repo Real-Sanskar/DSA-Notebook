@@ -33,6 +33,15 @@ using namespace std;
 
 // 2. Optimal approach (TC : O(N*M*log(N*M)))
 
+// Logic: Binary search on value range, count elements ≤ mid
+// Key Observation:
+
+// Median has (n×m)/2 elements smaller than it
+// Binary search on value: min(matrix) to max(matrix)
+// For each value, count how many elements ≤ value
+// Find smallest value with count > (n×m)/2
+
+
 int upperBound(vector<int> &arr, int m, int x){
     int low = 0;
     int high = m-1;
