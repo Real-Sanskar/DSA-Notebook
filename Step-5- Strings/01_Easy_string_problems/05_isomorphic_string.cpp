@@ -9,7 +9,7 @@
 using namespace std;
 
 
-// Two hash maps
+// Two hash maps (TC : O(N))
 
 // Maintain 2 hash maps: s->t and t->s
 // For each character pair, check if existing mapping is consistent.
