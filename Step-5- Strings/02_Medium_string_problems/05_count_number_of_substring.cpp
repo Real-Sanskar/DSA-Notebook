@@ -1,6 +1,17 @@
+// Given a string str and integer k
+// Return number of substrings with exactly k distinct characters
+
 #include<iostream>
 #include<unordered_set>
 using namespace std;
+
+
+
+// 1. Brute force : (TC : O(N^3)   SC : O(N))
+
+// Generate all substrings 
+// count distinct characters in each 
+// if exactly k -> increament count
 
 
 // int countSubstrings(string str, int k){
@@ -22,6 +33,13 @@ using namespace std;
 //     return count;
 // }
 
+
+
+
+// 2. Optimized Brute force (TC : O(N^2)  SC : O(1))
+
+// Instead of recounting distinct chars from scratch
+// MAINTAIN the set as we extend the substring
 
 
 // int countSubstrings(string str, int k){
@@ -50,6 +68,51 @@ using namespace std;
 //     return count;
 // }
 
+
+
+// Optimal (Sliding Window) (TC : O(N)   SC : O(1))
+
+// KEY FORMULA
+// exactly(k) = atMost(k) - atMost(k-1)
+// WHY?
+//   atMost(k) includes substrings with 0,1,2,...,k distinct
+//   atMost(k-1) includes substrings with 0,1,2,...,k-1 distinct
+//   Subtract → only substrings with EXACTLY k distinct remain!
+
+
+// WHY NOT DIRECT SLIDING WINDOW?
+// Sliding window works for:
+//   ✓ "at most k" → easy to shrink when > k
+//   ✓ "at least k" → can be converted
+
+// Does NOT directly work for:
+//   ✗ "exactly k" → hard to maintain exact count
+
+// For "at most k distinct":
+//   INVALID means: distinct > k
+//   When we see distinct > k, we SHRINK
+//   When distinct <= k, we COUNT
+
+
+// ||**ALGORITHM**||
+
+// Maintain window [left...right]:
+//     freq[26] array
+//     distinct count
+
+// EXPAND right:
+//     ADD s[right]
+//     if new char -> distinct++
+
+// SHRINK left (while distinct > k)  
+//     REMOVE s[left]
+//     if freq becomes 0 -> distinct--
+//     left++;
+
+// COUNT:
+//   count += (right - left + 1)
+//   ← All substrings ending at right, starting from left..right
+//   ← All have ≤ k distinct (because full window has ≤ k)
 
 
 int atMost(string str, int k){
