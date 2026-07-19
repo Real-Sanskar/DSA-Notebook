@@ -79,6 +79,9 @@ public:
         return head;
     }
 
+
+    // 2. Optimal (modify link) (TC : O(N)  SC: O(1))
+
     Node* reverseDLL(Node* head){
         // if list is empty or has one node, return as-is
         if(head == nullptr || head->next == nullptr){
