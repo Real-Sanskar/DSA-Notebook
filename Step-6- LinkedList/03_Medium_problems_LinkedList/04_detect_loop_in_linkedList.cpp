@@ -1,6 +1,8 @@
 #include<bits/stdC++.h>
 using namespace std;
 
+
+// Node class represents a linked list node
 class Node{
 public:
     int data;
@@ -19,62 +21,56 @@ public:
 
 class Solution{
 public:
-    Node* convertArr2LL(vector<int> &arr){
-        Node* head = new Node(arr[0]);
-        Node* prev = head;
-
-        for(int i=1; i<arr.size(); i++){
-            Node* newNode = new Node(arr[i]);
-
-            prev->next = newNode;
-            prev = newNode;
-        }
-        return head;
-    }
-
-    void printList(Node* head){
-        Node* temp = head;
-        while(temp != nullptr){
-            cout << temp->data << " ";
-            temp = temp->next;
-        }
-        cout << endl;
-    }
-
-    // bool detectLoop(Node* head){
-    //     unordered_map<Node*, int> visited;
-
-    //     Node* temp = head;
-    //     while(temp != nullptr){
-    //         if(visited.find(temp) != visited.end()){
-    //             return true;
-    //         }
-    //         visited[temp] = 1;
-
-    //         temp = temp->next;
-    //     }
-    //     return false;
-    // }
-
+    // 1. Brute force (Map to track visited node)  (TC: O(N)   SC: O(N))
 
     bool detectLoop(Node* head){
+        // create a map to track of visited nodes
+        unordered_map<Node*, int> visited;
+
+        // initialize a pointer to head
+        Node* temp = head;  
+        while(temp != nullptr){
+            // If node already exists in map, Loop detected
+            if(visited.find(temp) != visited.end()){
+                return true;
+            }
+            // Store the current node in map and mark as visited
+            visited[temp] = 1;
+            // move to next node
+            temp = temp->next;
+        }
+        // if traversal completes, no loop detected
+        return false;
+    }
+
+    // 2. Optimal (Slow and fast pointer) (TC: O(N)  SC: O(1))
+
+    bool detectLoop(Node* head){
+        // Initialize slow and fast pointer to head of linked list
         Node* slow = head;
         Node* fast = head;
 
+        // traverse the linked list untill end is reached
         while(fast != nullptr && fast->next != nullptr){
+            // move slow one step
             slow = slow->next;
+            // move fast 2 steps
             fast = fast->next->next;
 
+            // check if slow and fast pointer meet
             if(fast == slow){
+                // loop detected
                 return true;
             }
         }
+        // if fast reaches end, there is no loop
         return false;
     }
 };
 
 
 int main(){
+    // create a sample linked list
     Node* head = new Node(1);
     Node* second = new Node(2);
     Node* third = new Node(3);
@@ -86,6 +82,7 @@ int main(){
     third->next = fourth;
     fourth->next = fifth;
 
+    // Create a loop
     fifth->next = third;
 
     Solution obj;
@@ -96,6 +93,12 @@ int main(){
     else{
         cout << "No loop detected in linked list" << endl;
     }
+
+    delete head;
+    delete second;
+    delete third;
+    delete fourth;
+    delete fifth;
 
     return 0;
 }
