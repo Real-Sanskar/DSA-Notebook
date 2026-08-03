@@ -46,7 +46,7 @@ public:
     }
 
 
-    // 1. Brute force (array + sort) (TC: O(2*N)   SC: O(N))
+    // 1. Brute force (array + sort) (TC: O(N*logN)   SC: O(N))
 
     Node* sortList(Node* head){
         // vector to store node values
