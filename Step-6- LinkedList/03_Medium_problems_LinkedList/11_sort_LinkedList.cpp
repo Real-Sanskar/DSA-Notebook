@@ -75,7 +75,7 @@ public:
 
 
 
-    // 2. Optimal (Merge sort based)  (TC: O(N)   SC: O(1))
+    // 2. Optimal (Merge sort based)  (TC: O((N + N/2)*logN)   SC: O(logN))
 
     Node* mergeTwoSortedLinkedList(Node* list1, Node* list2){
         // Create a dummy node
