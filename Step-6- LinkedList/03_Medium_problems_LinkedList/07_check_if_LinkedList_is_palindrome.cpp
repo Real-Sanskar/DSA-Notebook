@@ -123,7 +123,7 @@ public:
         Node* slow = head;
         Node* fast = head;
         // Traverse the linked list to find the middle using slow and fast pointers
-        while(fast != nullptr && fast->next != nullptr){
+        while(fast->next != nullptr && fast->next->next != nullptr){
             slow = slow->next;
             fast = fast->next->next;
         }
@@ -156,7 +156,7 @@ public:
 
 
 int main(){
-    vector<int> arr = {3,7,5,7,3};
+    vector<int> arr = {3,7,5,6,7,3};
 
     Solution obj;
 
